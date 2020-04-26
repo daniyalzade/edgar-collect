@@ -19,3 +19,10 @@ Macys's EDGAR ID `0000794367`
 ```
 python main.py -y 2010 -d filings
 ```
+
+# Grep to Analyze Output
+Search for `SalesRevenueNet` that are reported in the required format
+
+```
+grep SalesRevenueNet macys.txt  | cut -f 4-8 | grep -Ev "^[[:alnum:]]" | sort | uniq
+```
